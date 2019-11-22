@@ -3,28 +3,49 @@ root = Tk()
 root.geometry('1080x720')
 root.title('reg form')
 
-label_0 = Label(root, text="Registration form",width=20,font=("bold", 20))
-label_0.place(x=40,y=40)
+title_label = Label(root, text="APM Portal",width=20,font=("bold", 30))
+title_label.place(x=40,y=20)
 
-label_1 = Label(root, text="FullName",width=20,font=("bold", 10))
-label_1.place(x=80,y=130)
+title_label = Label(root, text="Part Details::::",width=20,font=("bold", 15))
+title_label.place(x=40,y=80)
 
-entry_1 = Entry(root)
-entry_1.place(x=200,y=130)
+#Year
+year_label = Label(root, text="Year",width=20,font=("bold", 10))
+year_label.place(x=68,y=130)
 
-label_2 = Label(root, text="Email",width=20,font=("bold", 10))
-label_2.place(x=68,y=180)
+year_entry = Entry(root)
+year_entry.place(x=240,y=130)
 
-entry_2 = Entry(root)
-entry_2.place(x=240,y=180)
+#Make
+make_label = Label(root, text="Make",width=20,font=("bold", 10))
+make_label.place(x=68,y=160)
 
+make_entry = Entry(root)
+make_entry.place(x=240,y=160)
+
+#Model
+model_label = Label(root, text="Model",width=20,font=("bold", 10))
+model_label.place(x=68,y=190)
+
+model_entry = Entry(root)
+model_entry.place(x=240,y=190)
+
+#Part
+model_label = Label(root, text="Model",width=20,font=("bold", 10))
+model_label.place(x=68,y=220)
+
+model_entry = Entry(root)
+model_entry.place(x=240,y=220)
+
+
+'''
 label_3 = Label(root, text="Gender",width=20,font=("bold", 10))
 label_3.place(x=70,y=230)
 
 var = IntVar()
 Radiobutton(root, text="Male",padx = 5, variable=var, value=1).place(x=235,y=230)
 Radiobutton(root, text="Female",padx = 20, variable=var, value=2).place(x=290,y=230)
-
+'''
 
 label_4 = Label(root, text="Age:",width=20,font=("bold", 10))
 label_4.place(x=70,y=280)

@@ -52,11 +52,4 @@ def insert():
 Button(root, text='Submit',width=20,bg='brown',fg='white', command=insert).place(x=180,y=380)
 
 root.mainloop()
-
-
-
-
-
-def button_press():
-	f = open('test.txt', 'a+')
-	f.write()
+#create pull request

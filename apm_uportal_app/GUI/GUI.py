@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import filedialog
-import datetime
+
 root = Tk()
 root.geometry('1080x1000')
 root.title('APM Sale Form')

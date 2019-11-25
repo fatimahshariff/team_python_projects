@@ -316,7 +316,7 @@ send_confirm_button = Button(root,text='Send Confirmation',width=20,bg='black',f
 ###########################################################################################
 ###########################################################################################
 
-#create a send confirmation to customer function
+#create a send confirmation to customer function (Only diplay while last clicked)
 
 
 #run program

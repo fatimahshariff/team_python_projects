@@ -1,8 +1,9 @@
 from tkinter import *
 from tkinter import filedialog
+import datetime
 root = Tk()
 root.geometry('1080x1000')
-root.title('reg form')
+root.title('APM Sale Form')
 
 title_label = Label(root, text="APM Portal",width=20,font=("bold", 30))
 title_label.place(x=40,y=20)
@@ -240,45 +241,83 @@ delins_entry.place(x=750,y=610)
 
 ###############################################################################
 #Payment Info
+title4_label = Label(root, text="Payment Information",width=20,font=("bold", 15))
+title4_label.place(x=600,y=650)
+
+#Type Of Card
+card_type_label = Label(root, text="Card Type",width=20,font=("bold", 10))
+card_type_label.place(x=600,y=685)
+
+variable = StringVar(root)
+variable.set("Select")
+card_type_dropdown = OptionMenu(root, variable, "VISA", "MASTER CARD", "AMEX", "DISCOVER", "PayPal")
+card_type_dropdown.pack()
+card_type_dropdown .place(x=750,y=680)
+
+#Card Number
+card_num_label = Label(root, text="Card Number",width=20,font=("bold", 10))
+card_num_label.place(x=600,y=720)
+
+card_num_entry = Entry(root)
+card_num_entry.place(x=750,y=720)
+
+#Exp Month
+card_type_label = Label(root, text="Exp. Month",width=20,font=("bold", 10))
+card_type_label.place(x=600,y=755)
+
+variable = StringVar(root)
+variable.set("Select")
+card_mon_dropdown = OptionMenu(root, variable, "JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC")
+card_mon_dropdown.pack()
+card_mon_dropdown.place(x=750,y=750)
+
+#Exp Year
+card_type_label = Label(root, text="Exp. Year",width=20,font=("bold", 10))
+card_type_label.place(x=600,y=785)
+
+variable = StringVar(root)
+variable.set("Select")
+card_yr_dropdown = OptionMenu(root, variable, "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032", "2033", "2034", "2035", "2036", "2037", "2038", "2039", "2040")
+card_yr_dropdown.pack()
+card_yr_dropdown.place(x=750,y=780)
+
+#Card CVV
+card_cvv_label = Label(root, text="CVV",width=20,font=("bold", 10))
+card_cvv_label.place(x=600,y=820)
+
+card_cvv_entry = Entry(root)
+card_cvv_entry.place(x=750,y=820)
+
+#Name On Card
+card_name_label = Label(root, text="Name On Card",width=20,font=("bold", 10))
+card_name_label.place(x=600,y=850)
+
+card_name_entry = Entry(root)
+card_name_entry.place(x=750,y=850)
+
+#Submit Form Button
+submit_button = Button(root,text='Close Sale',width=10,bg='red',fg='white', command='NONE').place(x=700,y=880)
+
+#Send Confirmation To Customer
+send_confirm_button = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
 
 
-'''
-#Shipping Address
-uphone_label = Label(root, text="Address Line 1",width=20,font=("bold", 10))
-uphone_label.place(x=600,y=280)
+###########################################################################################
+###########################################################################################
+###########################################################################################
 
-uphone_entry = Entry(root)
-uphone_entry.place(x=750,y=280)
-'''
+#create a submit to manager function
 
-#image_button1.pack()35
-'''
-label_3 = Label(root, text="Gender",width=20,font=("bold", 10))
-label_3.place(x=70,y=230)
 
-var = IntVar()
-Radiobutton(root, text="Male",padx = 5, variable=var, value=1).place(x=235,y=230)
-Radiobutton(root, text="Female",padx = 20, variable=var, value=2).place(x=290,y=230)
-'''
+#def send_to_manager(email, path):
 
-def insert():
-	ent1 = entry_1.get()
-	ent2 = entry_2.get()
-	ent3 = entry_3.get()
-	ent4 = var.get()
-	if ent4 == 1:
-		ent4 = 'male'
-	else:
-		ent4 = 'female'	
 
-	print(ent4)		
-		
-	f = open('details.txt', 'a+')
-	f.write('Name :  {} \n  email :  {} \n age :   {}  \n gender : {} \n\n'.format(ent1,ent2,ent3,ent4))
-	print('done')
-	
-"""
-Button(root, text='Submit',width=20,bg='brown',fg='white', command=insert).place(x=180,y=380)
-"""
+###########################################################################################
+###########################################################################################
+###########################################################################################
 
+#create a send confirmation to customer function
+
+
+#run program
 root.mainloop()

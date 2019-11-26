@@ -1,5 +1,7 @@
 from tkinter import *
 from tkinter import filedialog
+import smtplib
+from email.message import EmailMessage
 
 
 root = Tk()
@@ -343,16 +345,10 @@ card_name = card_name_entry.get()
 #Submit Form Button
 
 
+#Display the Send Confirmation button and send mail to customer with confirmation
 
-def display_confirm():
-	Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
-
-def get_year():
-	year1 = year_entry.get()
-	Label(root, text=year1 ,width=20,font=("bold", 10)).place(x=400,y=600)
-
-
-submit_button = Button(root,text='Close Sale',width=10,bg='red',fg='white', command=display_confirm).place(x=700,y=880)
+close_sale = Button(root,text='Close Sale',width=10,bg='red',fg='white', command='NONE').place(x=700,y=880)
+send_confirmation = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
 
 #Send Confirmation To Customer
 #send_confirm_button = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)

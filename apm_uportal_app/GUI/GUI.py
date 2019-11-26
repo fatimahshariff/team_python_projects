@@ -9,6 +9,7 @@ root.geometry('1080x1000')
 root.title('APM Sale Form')
 
 title_label = Label(root, text="APM Portal",width=20,font=("bold", 30))
+
 title_label.place(x=40,y=20)
 
 

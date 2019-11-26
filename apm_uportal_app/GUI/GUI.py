@@ -344,9 +344,6 @@ card_name = card_name_entry.get()
 
 #Submit Form Button
 
-
-#Display the Send Confirmation button and send mail to customer with confirmation
-
 close_sale = Button(root,text='Close Sale',width=10,bg='red',fg='white', command='NONE').place(x=700,y=880)
 send_confirmation = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
 

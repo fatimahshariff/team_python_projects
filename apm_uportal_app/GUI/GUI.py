@@ -343,23 +343,125 @@ card_name_entry = Entry(root)
 card_name_entry.place(x=750,y=850)
 card_name = card_name_entry.get()
 
-#Submit Form Button
+#Send Confirmation to user
+def send_to_customer():
+	username = 'apmadmin@autopartmine.com'
+	password = 'apmadmin@0011'
 
+	msg = EmailMessage()
+	msg['Subject'] = 'Order Confirmation - {} | {} | {} | {} - Autopart Mine'.format(year_entry.get(), make_entry.get(), model_entry.get(), Part_entry.get())
+	msg['From'] = username
+	msg['To'] = 'aamirhussain.rockz@gmail.com'
+
+	name = 'Aamir'
+	msg.set_content('Plain Text Message')
+
+	html_msg = """\
+	<!DOCTYPE html>
+	<html>
+	    <body>
+				<table border="0" cellpadding="0" cellspacing="0" width="801"><tbody><tr><td valign="top">
+				        <table border="0" align="left" cellpadding="0" cellspacing="0"><tbody><tr><td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="258" border="0" height="1"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="82" border="0" height="1"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="454" border="0" height="1"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="6" border="0" height="1"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="1" border="0" height="1"></td>
+				  </tr><tr><td colspan="2"><a href="https://www.autopartmine.com" target="_blank" rel="noreferrer"><img name="m_2024318615125038657_header_041408_r1_c1" src="https://res.cloudinary.com/drjttrnae/image/upload/v1570100656/APM/Untitled-1-01.png" id="m_2024318615125038657header_041408_r1_c1" alt="Quality Auto Parts - Auto Parts" title="Quality Auto Parts - Auto Parts" width="340" border="0" height="89"></a></td>
+				    <td rowspan="2" colspan="2"><img name="m_2024318615125038657_header_041408_r1_c3" src="http://qualityautoparts.com/images/header/new_header/header_041408_r1_c3.gif" id="m_2024318615125038657header_041408_r1_c3" alt="Quality Auto Parts - Auto Parts" width="460" border="0" height="95"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="1" border="0" height="89"></td>
+				  </tr><tr><td colspan="2"><img name="m_2024318615125038657_header_041408_r2_c1" src="http://qualityautoparts.com/images/header/new_header/header_041408_r2_c1.gif" id="m_2024318615125038657header_041408_r2_c1" width="340" border="0" height="6"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="1" border="0" height="6"></td>
+				  </tr><tr><td rowspan="2"><img name="m_2024318615125038657_header_041408_r3_c1" src="http://qualityautoparts.com/images/header/new_header/header_041408_r3_c1.gif" id="m_2024318615125038657header_041408_r3_c1" width="258" border="0" height="34"></td>
+				    <td colspan="2" style="font-size: 11px; font-weight: bold; color: rgb(76,76,76)" valign="middle" align="left"><a href="http://autopartmine.com/" style="text-decoration: none; color: rgb(76,76,76); padding-left: 18px" title="Home" target="_blank" rel="noreferrer">Home</a>
+				      &nbsp; <a href="https://www.autopartmine.com/about/" style="padding-left: 18px; color: rgb(76,76,76); text-decoration: none" title="About Us" target="_blank" rel="noreferrer">About Us</a> &nbsp; <a href="https://www.autopartmine.com/products/" style="padding-left: 18px; color: rgb(76,76,76); text-decoration: none" title="Parts List" target="_blank" rel="noreferrer">Parts List</a> &nbsp; <a href="https://www.autopartmine.com/get-quote/" style="color: rgb(76,76,76); padding-left: 18px; text-decoration: none" title="Part Request" target="_blank" rel="noreferrer">Part Request</a> &nbsp; <a href="https://www.autopartmine.com/contact/" style="color: rgb(76,76,76); padding-left: 18px; text-decoration: none" title="Customer Service" target="_blank" rel="noreferrer">Customer Service</a> </td>
+				    <td rowspan="2"><img name="m_2024318615125038657_header_041408_r3_c4" src="http://qualityautoparts.com/images/header/new_header/header_041408_r3_c4.gif" id="m_2024318615125038657header_041408_r3_c4" width="6" border="0" height="34"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="1" border="0" height="27"></td>
+				  </tr><tr><td colspan="2"><img name="m_2024318615125038657_header_041408_r4_c2" src="http://qualityautoparts.com/images/header/new_header/header_041408_r4_c2.gif" id="m_2024318615125038657header_041408_r4_c2" width="536" border="0" height="7"></td>
+				    <td><img src="http://qualityautoparts.com/images/header/new_header/spacer.gif" width="1" border="0" height="7"></td>
+				  </tr><tr><td colspan="4" align="center">
+					<b><h2>Call : 1-612-439-8351<br></b>
+					<hr size="2"></td>
+				  </tr><tr><td align="left" valign="top" colspan="4"> 
+				                  <table align="left" border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="padding-left: 20px" valign="top">
+				                        <table align="left" border="0" cellpadding="0" cellspacing="0" width="701"><tbody><tr><td align="left" valign="top" width="319"><p><font face="verdana" size="3"><b>Hello {},</b></font></p>
+				                                  <p style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px"><p>Thank you for your order {} | {} | {} | {}. The order will be shipped to your provided shipping address at the earliest. </p>
+				                                  <p><b>Billing Details :</b> {}, {}, {}, {}, {}<br>
+				                                  <b>Shipping Details :</b> {}, {}, {}, {}, {}</p>
+				                                  <p>You agreed to purchase Used OEM Part for a total of ${} USD. Every part we ship will be inspected from certified mechanics and carries 30 days replacement warranty. By approving this order you agree to terms, conditions and warranty policy listed on <a href="http://www.autopartmine.com" target="_blank" data-saferedirecturl="https://www.google.com/url?q=http://www.autopartmine.com&amp;source=gmail&amp;ust=1574947140377000&amp;usg=AFQjCNHFVuFGmWRoaOSno2FTslz8349bRQ">www.autopartmine.com</a>. The total order value on your order will be split and billed in 2 transactions to cover cost of part, shipping and locating separately. Should you have any questions or concerns, you can always reach us our customer service at 1-612-439-8351 or email us at <a href="mailto:sales@autopartmine.com" target="_blank">sales@autopartmine.com</a></p>
+				                                  <p>For any queries or part related information please get in touch with us either through email or call us on 1-612-439-8351. </p>
+				                                  <p><br>
+				        
+												  
+												  </td>
+				                                
+				                                
+				                              </tr><tr><td>&nbsp;</td>
+				                              </tr></tbody></table></td>
+				                      </tr><tr><td style="padding-right: 25px; padding-left: 20px" align="left" valign="top">
+				                            <br>
+				                            <p style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px"><b>Why buy from Autopart Mine vs our competitors?</b></p>
+				                            <table width="100%" border="0" style="font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px"><tbody><tr><td width="5%" align="left"><strong>*</strong></td>
+				                                <td width="95%" align="left">Your satisfaction is guaranteed on every part we sell with our 30 day warranty policy </td>
+				                              </tr><tr><td width="5%" align="left"><strong>*</strong></td>
+				                                <td width="95%" align="left">We have a dedicated customer care team always ready to serve you  </td>
+				                              </tr><tr><td width="5%" align="left"><strong>*</strong></td>
+				                                <td width="95%" align="left">We feature the largest selection of quality used parts anywhere in the USA</td>
+				                              </tr><tr><td width="5%" align="left"><strong>*</strong></td>
+											  <td width="95%" align="left">We ship most orders within 24 hours  </td>
+											  </tr></tbody></table><p style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px"><br><font face="verdana" size="-1">
+				                          Sincerely,</font></p>
+											<p style="margin-top: 10px; font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 12px"><font face="verdana" size="-1"><strong>Autopart Mine LLC. </strong>
+											    <br><a href="https://www.autopartmine.com/" target="_blank" rel="noreferrer">https://www.autopartmine.com</a></font><font face="verdana" size="-1"><br><a href="https://www.autopartmine.com/contact" target="_blank" rel="noreferrer">99, Wall Street,</a><br><a href="https://www.autopartmine.com/contact" target="_blank" rel="noreferrer">
+												Suite 1332</a><br><a href="https://www.autopartmine.com/contact" target="_blank" rel="noreferrer">
+												New York, NY – 10005</a> <br>
+												1-612-439-8351 tel<br></font><br></p>						</td>
+				                      </tr></tbody></table></td>
+				              </tr></tbody></table><br></td>
+				    </tr></tbody></table>
+	    </body>
+	</html>
+	""".format(fname)
+
+	msg.add_alternative(html_msg, subtype='html')
+
+
+	with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
+		smtp.login(username, password)
+		smtp.send_message(msg)
+		smtp.close()
+
+
+#button to send confirmation
+
+#function to show the Send to user button after clicking on close sale
+
+def show_button():
+	Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
+
+#Double function to call 2 funtions together
+
+def double_func():
+    show_button()
+    #send_to_manager() --  this func is to send mail to manager which will combine with show button
+
+
+#Send to manager
 close_sale = Button(root,text='Close Sale',width=10,bg='red',fg='white', command='NONE').place(x=700,y=880)
-send_confirmation = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
 
-#Send Confirmation To Customer
-#send_confirm_button = Button(root,text='Send Confirmation',width=20,bg='black',fg='white', command='NONE').place(x=800,y=880)
+
 
 
 ###########################################################################################
 ###########################################################################################
 ###########################################################################################
 
-#create a submit to manager function
-
-
-#def send_to_manager(email, path):
+'''
+Next Steps:
+> Add args into the format mail thing for customer
+> Create Send to Manager Function to trigger the mail
+> Figure out how to get the image.
+> Figure out how to Selecct from the dropdown
+'''
 
 
 ###########################################################################################

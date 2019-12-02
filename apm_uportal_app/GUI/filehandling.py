@@ -13,4 +13,4 @@ def append_file(path, sent):
 
 def read_file(path):
 	f = open(path, 'r')
-	print(f.read())	
+	print(f.read())
